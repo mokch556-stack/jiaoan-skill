@@ -1,0 +1,12 @@
+{
+  "name": "jiaoan-skill",
+  "required_files": [
+    "SKILL.md",
+    "skill.json",
+    "templates/教案模板基底_齐工程教2023-11号.docx",
+    "scripts/dump_full.py",
+    "scripts/verify_format.py",
+    "versions/CHANGELOG.md",
+    "README.md"
+  ]
+}

@@ -3,3 +3,4 @@ config_template.json
 sync_jiaoan_skill.log
 __pycache__/  
 *.pyc  
+__pycache__/
