@@ -1,0 +1,23 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+jobs:
+  qa:
+    name: 包质量门禁
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Run QA checks
+        run: python scripts/qa_checks.py
+
+      - name: Compile all scripts
+        run: python -m py_compile scripts/dump_full.py scripts/verify_format.py scripts/qa_checks.py
