@@ -1,0 +1,22 @@
+{
+  "name": "jiaoan-skill",
+  "version": "2.1.0",
+  "release_date": "2026-09-03",
+  "description": "依据开课说明三级矩阵KSA生成/重做教案docx，含表头9行教案表、教学过程步骤、212汇报、课程思政、板书、字体行距格式规范",
+  "author": "default",
+  "source_session": "教案v4.2→v4.13改造全流程",
+  "tags": ["教案", "教学", "docx", "三级矩阵", "212汇报", "课程思政"],
+  "dependencies": ["python-docx"],
+  "compatibility": ["Windows", "python3"],
+  "input": ["开课说明（三级矩阵）", "本次课课点信息", "模板基底docx（包内templates/）"],
+  "output": "教案docx（表0九行教案表+教学过程+课堂训练/课后作业/教学后记表+板书页横版）",
+  "resources": {
+    "templates": ["templates/教案模板基底_齐工程教2023-11号.docx"],
+    "scripts": ["scripts/dump_full.py", "scripts/verify_format.py"]
+  },
+  "changelog": [
+    "v2.1.0 结合第2次课教案修订稿新增3项质量规范：①巩固性作业须与矩阵学习产出及测量标准逐条匹配（列出课点产出①②③逐条核查可提交落点，补第2次课曾缺的3处）；②步骤标题(步骤N：XXX)一律加粗显式化；③行距22磅/图片段单倍居中加重强调(含表格单元格文字)。修正SKILL.md头部版本号v1.0.0→v2.1.0与元数据对齐",
+    "v2.0.0 补齐可执行资源：新增 templates/教案模板基底_齐工程教2023-11号.docx（学校模板格式基底，格式全继承）、scripts/verify_format.py（通用校验，实测全绿）、scripts/dump_full.py；SKILL.md 新增'如何用基底模板填充文字'章节；从纯规范升级为规范+模板+脚本可执行包",
+    "v1.0.0 初版：沉淀《人工智能通识》第1次课教案v4.2-v4.13全部修改要求，含内容质量标准、格式规范、校验清单、踩坑记录"
+  ]
+}
