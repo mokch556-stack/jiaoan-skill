@@ -91,7 +91,8 @@ def main():
     if cl_path is not None and want:
         first = None
         for line in (text_of(cl_path) or "").splitlines():
-            m = re.match(r"^\|\s*(v[\d.]+)\s*\|", line)
+            # 兼容表格行 `| v1.2.3 |` 与标题行 `## v1.2.3 (date)` / `# v1.2.3`
+            m = re.match(r"^\|\s*(v[\d.]+)\s*\|", line) or re.match(r"^#{1,6}\s*(v[\d.]+)\b", line)
             if m:
                 first = m.group(1)
                 break
